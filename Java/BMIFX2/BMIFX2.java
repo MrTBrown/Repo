@@ -3,7 +3,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.shape.*;
-import javafx.scene.paint.*;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.geometry.Insets;
@@ -12,7 +11,7 @@ import javafx.scene.text.*;
 import javafx.scene.text.Font;
 import javafx.geometry.*;
 import javafx.event.*;
-import javafx.scene.image.*;
+
 
 
 
@@ -41,6 +40,7 @@ public class BMIFX2 extends Application {
   private double w = 0;     // weight
   private double b = 0;      // bmi
   private String ausgabe;
+  private String styleOutput = "-fx-control-inner-background: #FF3333; -fx-text-inner-color: #FFFF00;";
   
   public void start(Stage primaryStage) { 
     
@@ -105,6 +105,7 @@ public class BMIFX2 extends Application {
     outputField.setLayoutY(160);
     outputField.setPrefHeight(65);
     outputField.setPrefWidth(249);
+    outputField.setStyle(styleOutput);
     outputField.setFont(Font.font("Dialog", 18));
     outputField.setEditable(false);
     root.getChildren().add(outputField);
@@ -141,6 +142,7 @@ public class BMIFX2 extends Application {
   } // end of main
   
   public void button1_Action(Event evt) {
+    
     s = Double.parseDouble(size.getText());
     w = Double.parseDouble(weight.getText());
     b = w / (s * s);
